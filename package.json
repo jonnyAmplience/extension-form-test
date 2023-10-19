@@ -14,7 +14,7 @@
     "vite": "^4.4.5"
   },
   "dependencies": {
-    "dc-extensions-sdk": "^2.2.0",
-    "dc-extensions-sdk-bridge": "git@github.com:amplience/dc-extensions-sdk-bridge.git"
+    "dc-extensions-sdk": "^2.3.0",
+    "dc-extensions-sdk-bridge": "file:../dc-extensions-sdk-bridge"
   }
 }

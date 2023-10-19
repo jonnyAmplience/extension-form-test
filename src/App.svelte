@@ -37,10 +37,20 @@
     const img = await $sdk.connection.request('media-image-get')
     console.log(img);
   }
+
+
+  const testRateLimit = async () => {
+    const img = await $sdk.connection.request('media-image-get')
+    for (let i = 0; i <= 500; i++) {
+      console.log('requesting now...', i + 1)
+      $sdk.connection.request('get-asset-by-id', img.id).then(console.log)
+    }
+  }
 </script>
 
 <main>
   <iframe bind:this={iframe}></iframe>
   <button on:click={getMedia}>Get media</button>
+  <button on:click={testRateLimit}>test rate limiting</button>
 </main>
 
