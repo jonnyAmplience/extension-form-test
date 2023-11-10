@@ -41,9 +41,9 @@
 
   const testRateLimit = async () => {
     const img = await $sdk.connection.request('media-image-get')
-    for (let i = 0; i <= 500; i++) {
+    for (let i = 0; i <= 20; i++) {
       console.log('requesting now...', i + 1)
-      $sdk.connection.request('get-asset-by-id', img.id).then(console.log)
+      $sdk.connection.request('get-asset-by-id', img.id).then(console.log).catch(console.log)
     }
   }
 </script>
